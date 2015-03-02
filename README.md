@@ -25,7 +25,7 @@ You can add a check to cache when configure the heartcheck
 ```ruby
 Heartcheck.setup do |config|
   config.add :cache do |c|
-    c.add_service(name: 'MyCacheConnection', connection: Cache.new)
+    c.add_service(name: 'MyCacheConnection', connection: Dalli::Client.new('localhost:11211'))
   end
 end
 ```
@@ -36,7 +36,7 @@ Ex.
 ```ruby
 Heartcheck.setup do |config|
   config.add :cache do |c|
-    c.add_service(name: 'MyCacheConnection', connection: Dalli::Client.new('localhost:11211'))
+    c.add_service(name: 'MyCacheConnection', connection: Rails.cache.instance_variable_get("@data"))
   end
 end
 ```
