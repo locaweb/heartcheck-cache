@@ -1,5 +1,7 @@
 # Heartcheck::Cache
 
+[![Build Status](https://travis-ci.org/locaweb/heartcheck-cache.svg?branch=master)](https://travis-ci.org/locaweb/heartcheck-cache)
+
 A plugin to check cache connection with heartcheck
 
 ## Installation
