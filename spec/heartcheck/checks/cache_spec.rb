@@ -62,5 +62,23 @@ RSpec.describe Heartcheck::Checks::Cache do
         end
       end
     end
+
+    it 'supports concurrent application instances/checks' do
+      total_concurrent_instances = 30
+
+      concurrent_checks = 0.upto(total_concurrent_instances).map do |n|
+        Thread.new do
+          checker_instance = described_class.new.tap do |c|
+            c.add_service(name: "check #{n}", connection: connection)
+          end
+
+          checker_instance.check
+        end
+      end
+
+      check_results = concurrent_checks.map(&:value)
+
+      expect(check_results.inspect).not_to include('error')
+    end
   end
 end
