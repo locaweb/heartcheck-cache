@@ -66,7 +66,7 @@ Run the command `./scripts/heartcheck-cache -h` to see available options.
 
 ## Contributing
 
-1.  Fork it ( https://github.com/locaweb/heartcheck-cache )
+1.  [Fork it](https://github.com/locaweb/heartcheck-cache/fork)
 2.  Create your feature branch ( **git checkout -b my-new-feature** )
 3.  Commit your changes ( **git commit -am 'Add some feature'** )
 4.  Push to the branch ( **git push origin my-new-feature** )
