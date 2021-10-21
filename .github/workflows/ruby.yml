@@ -35,7 +35,5 @@ jobs:
       # You may pin to the exact commit or the version.
       # uses: niden/actions-memcached@3b3ecd9d0d035ea92db716dc1540a7dbe9e56349
       uses: niden/actions-memcached@v7
-    - name: Install
-      run: bundle install -j 4 --retry 3
     - name: Run tests
-      run: test bundle exec rspec spec
+      run: RAILS_ENV=test bundle exec rspec spec
