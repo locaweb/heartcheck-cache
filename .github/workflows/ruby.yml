@@ -31,6 +31,8 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Setup
+      run: bundle install -j 4 --retry 3
     - name: Memcached Service
       # You may pin to the exact commit or the version.
       # uses: niden/actions-memcached@3b3ecd9d0d035ea92db716dc1540a7dbe9e56349
