@@ -9,9 +9,9 @@ name: Ruby
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, dev-github-actions ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, dev-github-actions ]
 
 jobs:
   test:
